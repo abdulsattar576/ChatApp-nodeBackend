@@ -13,6 +13,7 @@ import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 app.use(
   cors({
     origin: ["https://chatapp-dusky-delta.vercel.app/"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );

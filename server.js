@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 app.use(
   cors({
-    origin: ["https://chatapp-dusky-delta.vercel.app"],
+    origin: [process.env.CLIENT_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

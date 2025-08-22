@@ -7,12 +7,12 @@ import MessageRoutes from "./routes/messageRoutes.js";
 import cors from "cors";
 
 connectDB();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 //middlewares
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL],
+    origin: ["https://chatapp-dusky-delta.vercel.app/"],
     credentials: true,
   })
 );

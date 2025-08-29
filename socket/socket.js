@@ -5,7 +5,22 @@ import http from "http";
 import { Server } from "socket.io";
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: [process.env.CLIENT_URL] } });
+ 
+ const io = new Server(server, {
+  cors: {
+    origin: (origin, callback) => {
+      const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, origin);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST"],
+  },
+});
+
 const userSocketMap={
 
 }

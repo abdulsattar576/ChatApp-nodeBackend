@@ -12,9 +12,10 @@ const PORT = process.env.PORT || 5000;
 import { errorMiddleware } from "./middlewares/errorMiddleware.js";
 app.use(
   cors({
-    origin: [process.env.CLIENT_URL],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
+ 
+      origin: "http://localhost:5173",   // your frontend URL
+  credentials: true     
+    
   })
 );
 app.use(cookieParser());

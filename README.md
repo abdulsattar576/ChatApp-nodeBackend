@@ -210,8 +210,4 @@ MIT License. Free to use, modify, and distribute.
 ```
 
 ---
-
-If you want, I can also **generate a downloadable `.md` file** ready to save and open directly in VS Code so you don’t even need to copy-paste.  
-
-Do you want me to do that?
-```
+ 
